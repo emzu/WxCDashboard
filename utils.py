@@ -1,8 +1,13 @@
-!pip install rasterio fiona shapely pyproj
-!pip install -U scikit-fuzzy
-!pip install ipympl
-!pip install pycrs
-!pip install os
+import os
+import ee
+import pycrs
+import geemap #Python Interface/Extension Library for Earth Engine
+import shapely
+import zipfile
+
+import fiona
+fiona.drvsupport.supported_drivers['libkml'] = 'rw'
+fiona.drvsupport.supported_drivers['LIBKML'] = 'rw'
 
 def outlineToFields(subak_kmz_filepath):
   #Input: Subak KML filepath
