@@ -1,5 +1,15 @@
 import os
 import ee
+
+from google.colab import auth
+auth.authenticate_user(project_id="earthengine-23706")
+
+# Trigger the authentication flow.
+ee.Authenticate()
+
+# Initialize the library.
+ee.Initialize()
+
 import pycrs
 import geemap #Python Interface/Extension Library for Earth Engine
 import shapely
