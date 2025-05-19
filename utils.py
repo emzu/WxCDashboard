@@ -5,6 +5,9 @@ import geemap #Python Interface/Extension Library for Earth Engine
 import shapely
 import zipfile
 
+import geopandas as gpd
+import pandas as pd
+
 import fiona
 fiona.drvsupport.supported_drivers['libkml'] = 'rw'
 fiona.drvsupport.supported_drivers['LIBKML'] = 'rw'
