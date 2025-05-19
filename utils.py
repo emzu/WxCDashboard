@@ -48,8 +48,10 @@ def outlineToFields(subak_kmz_filepath):
   cropland = cropland.updateMask(cropland)
   cropland_features = cropland.reduceToVectors(**{
     'geometry': bbox,  # Limit the features to your bounding box
-    'scale': 10,       # Adjust scale as needed
+    'scale': 50,       # Adjust scale as needed
     'geometryType': 'polygon',
     'maxPixels': 1e13  # Increase if necessary for large areas
   })
-  return cropland_features
+
+  gridded_cropland = cropland_features.geometry().coveringGrid(cropland.projection())
+  return gridded_cropland
