@@ -1,3 +1,9 @@
+!pip install rasterio fiona shapely pyproj
+!pip install -U scikit-fuzzy
+!pip install ipympl
+!pip install pycrs
+!pip install os
+
 def outlineToFields(subak_kmz_filepath):
   #Input: Subak KML filepath
   #Returns: Fields
