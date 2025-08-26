@@ -34,9 +34,9 @@ def outlineToFields(subak_kmz_filepath):
       kmz.extractall(extraction_dir)
   #Open the KML and save as a shapefile
   fields_gdf = gpd.read_file('/content/drive/MyDrive/Research/AWDMonitoring_Bali/doc.kml', driver='libkml')
-  fields_gdf = fields_gdf[fields_gdf.index % 2 == 1]
-  fields_gdf[['Name', 'Status']] = fields_gdf['Name'].str.split('-', expand=True)
-  fields_gdf['geometry'] = shapely.wkb.loads(shapely.wkb.dumps(fields_gdf['geometry'], output_dimension=2))
+  #fields_gdf = fields_gdf[fields_gdf.index % 2 == 1]
+  #fields_gdf[['Name', 'Status']] = fields_gdf['Name'].str.split('-', expand=True)
+  #fields_gdf['geometry'] = shapely.wkb.loads(shapely.wkb.dumps(fields_gdf['geometry'], output_dimension=2))
   fields_gdf.to_file("fields2024.shp")
 
   bbox_bounds = fields_gdf.total_bounds
